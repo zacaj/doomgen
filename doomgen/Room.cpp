@@ -1,6 +1,7 @@
 #include "Room.h"
 #include <GL\gl.h>
 #include "main.h"
+#include <stdlib.h>
 
 
 Room::Room(void)
@@ -23,6 +24,8 @@ void Room::draw()
 void Room::generateRandom(vec2f center)
 {
 	int nSide=drand(5,.8);
+	if(nSide<4)
+		nSide=4;
 	float d=drand(15,3);
 	double offsetAngle=.01*(rand()%628);
 	double a=0;

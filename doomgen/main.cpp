@@ -6,7 +6,9 @@
 #define M_PI 3.14159265358979323846
 #endif
 #include "Room.h"
-vector<Room*> rooms;
+#include <vector>
+#include <time.h>
+std::vector<Room*> rooms;
 double drand_()   /* uniform distribution, (0..1] */
 {
 	return (rand()+1.0)/(RAND_MAX+1.0);
@@ -22,6 +24,7 @@ double drand(double mean,double dev)
 void
 	init(void)
 {
+	srand(time(NULL));
 	/* set viewing projection */
 	glMatrixMode(GL_PROJECTION);
 	glOrtho(-100,100,-100,100, 1.0F, 1000.0F);

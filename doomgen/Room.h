@@ -4,7 +4,7 @@
 class Room
 {
 public:
-	vector<vec2f> pts;
+	std::vector<vec2f> pts;
 	Room(void);
 	virtual ~Room(void);
 	virtual void draw();
